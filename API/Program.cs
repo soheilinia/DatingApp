@@ -13,21 +13,28 @@ builder.Services.AddDbContext<DataContext>(options =>
 
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 // builder.Services.AddOpenApi();
-builder.Services.AddCors();
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("CorsPolicy",
+        builder => builder.AllowAnyOrigin()
+                          .AllowAnyMethod()
+                          .AllowAnyHeader()
+                          .WithOrigins("http://localhost:4200", "https://localhost:4200"));
+});
 
 var app = builder.Build();
 
-// // Configure the HTTP request pipeline.
-// if (app.Environment.IsDevelopment())
-// {
-//     app.MapOpenApi();
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
+{
+    app.UseDeveloperExceptionPage();
+}
 
-// }
+app.UseHttpsRedirection();
 
-// app.UseHttpsRedirection();
+app.UseCors("CorsPolicy");
 
-// app.UseAuthorization();
-app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:4200, https://localhost:4200"));
+app.UseAuthorization();
 
 app.MapControllers();
 
