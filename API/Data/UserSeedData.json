@@ -1,0 +1,202 @@
+[
+  {
+    "id": 1,
+    "userName": "user1",
+    "dateOfBirth": "1990-01-01",
+    "knowAs": "User One",
+    "created": "2023-01-01T00:00:00Z",
+    "lastActive": "2023-10-01T00:00:00Z",
+    "gendre": "male",
+    "introduction": "Hello, I am User One.",
+    "interests": "Reading, Traveling",
+    "lookingFor": "Friendship",
+    "city": "New York",
+    "country": "USA",
+    "photos": [
+      {
+        "url": "https://randomuser.me/api/portraits/men/1.jpg",
+        "isMain": true
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "userName": "user2",
+    "dateOfBirth": "1992-02-02",
+    "knowAs": "User Two",
+    "created": "2023-02-02T00:00:00Z",
+    "lastActive": "2023-10-02T00:00:00Z",
+    "gendre": "male",
+    "introduction": "Hello, I am User Two.",
+    "interests": "Music, Sports",
+    "lookingFor": "Dating",
+    "city": "Los Angeles",
+    "country": "USA",
+    "photos": [
+      {
+        "url": "https://randomuser.me/api/portraits/men/2.jpg",
+        "isMain": true
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "userName": "user3",
+    "dateOfBirth": "1993-03-03",
+    "knowAs": "User Three",
+    "created": "2023-03-03T00:00:00Z",
+    "lastActive": "2023-10-03T00:00:00Z",
+    "gendre": "male",
+    "introduction": "Hello, I am User Three.",
+    "interests": "Cooking, Hiking",
+    "lookingFor": "Friendship",
+    "city": "Chicago",
+    "country": "USA",
+    "photos": [
+      {
+        "url": "https://randomuser.me/api/portraits/men/3.jpg",
+        "isMain": true
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "userName": "user4",
+    "dateOfBirth": "1994-04-04",
+    "knowAs": "User Four",
+    "created": "2023-04-04T00:00:00Z",
+    "lastActive": "2023-10-04T00:00:00Z",
+    "gendre": "male",
+    "introduction": "Hello, I am User Four.",
+    "interests": "Gaming, Traveling",
+    "lookingFor": "Dating",
+    "city": "Houston",
+    "country": "USA",
+    "photos": [
+      {
+        "url": "https://randomuser.me/api/portraits/men/4.jpg",
+        "isMain": true
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "userName": "user5",
+    "dateOfBirth": "1995-05-05",
+    "knowAs": "User Five",
+    "created": "2023-05-05T00:00:00Z",
+    "lastActive": "2023-10-05T00:00:00Z",
+    "gendre": "male",
+    "introduction": "Hello, I am User Five.",
+    "interests": "Photography, Music",
+    "lookingFor": "Friendship",
+    "city": "Phoenix",
+    "country": "USA",
+    "photos": [
+      {
+        "url": "https://randomuser.me/api/portraits/men/5.jpg",
+        "isMain": true
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "userName": "user6",
+    "dateOfBirth": "1996-06-06",
+    "knowAs": "User Six",
+    "created": "2023-06-06T00:00:00Z",
+    "lastActive": "2023-10-06T00:00:00Z",
+    "gendre": "male",
+    "introduction": "Hello, I am User Six.",
+    "interests": "Reading, Traveling",
+    "lookingFor": "Dating",
+    "city": "Philadelphia",
+    "country": "USA",
+    "photos": [
+      {
+        "url": "https://randomuser.me/api/portraits/men/6.jpg",
+        "isMain": true
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "userName": "user7",
+    "dateOfBirth": "1997-07-07",
+    "knowAs": "User Seven",
+    "created": "2023-07-07T00:00:00Z",
+    "lastActive": "2023-10-07T00:00:00Z",
+    "gendre": "male",
+    "introduction": "Hello, I am User Seven.",
+    "interests": "Music, Sports",
+    "lookingFor": "Friendship",
+    "city": "San Antonio",
+    "country": "USA",
+    "photos": [
+      {
+        "url": "https://randomuser.me/api/portraits/men/7.jpg",
+        "isMain": true
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "userName": "user8",
+    "dateOfBirth": "1998-08-08",
+    "knowAs": "User Eight",
+    "created": "2023-08-08T00:00:00Z",
+    "lastActive": "2023-10-08T00:00:00Z",
+    "gendre": "male",
+    "introduction": "Hello, I am User Eight.",
+    "interests": "Cooking, Hiking",
+    "lookingFor": "Dating",
+    "city": "San Diego",
+    "country": "USA",
+    "photos": [
+      {
+        "url": "https://randomuser.me/api/portraits/men/8.jpg",
+        "isMain": true
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "userName": "user9",
+    "dateOfBirth": "1999-09-09",
+    "knowAs": "User Nine",
+    "created": "2023-09-09T00:00:00Z",
+    "lastActive": "2023-10-09T00:00:00Z",
+    "gendre": "male",
+    "introduction": "Hello, I am User Nine.",
+    "interests": "Gaming, Traveling",
+    "lookingFor": "Friendship",
+    "city": "Dallas",
+    "country": "USA",
+    "photos": [
+      {
+        "url": "https://randomuser.me/api/portraits/men/9.jpg",
+        "isMain": true
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "userName": "user10",
+    "dateOfBirth": "2000-10-10",
+    "knowAs": "User Ten",
+    "created": "2023-10-10T00:00:00Z",
+    "lastActive": "2023-10-10T00:00:00Z",
+    "gendre": "male",
+    "introduction": "Hello, I am User Ten.",
+    "interests": "Photography, Music",
+    "lookingFor": "Dating",
+    "city": "San Jose",
+    "country": "USA",
+    "photos": [
+      {
+        "url": "https://randomuser.me/api/portraits/men/10.jpg",
+        "isMain": true
+      }
+    ]
+  }
+]
