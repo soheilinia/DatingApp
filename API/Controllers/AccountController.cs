@@ -18,22 +18,6 @@ public class AccountController(DataContext DbContext, ITokenService tokenService
             return BadRequest("Username is taken");
         }
         return Ok();
-        // using var hmac = new HMACSHA512();
-
-        // var user = new AppUser
-        // {
-        //     UserName = registerDto.Username.ToLower(),
-        //     PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(registerDto.Password)),
-        //     PasswordSalt = hmac.Key
-        // };
-
-        // DbContext.Users.Add(user);
-        // await DbContext.SaveChangesAsync();
-
-        // return new UserDto{
-        //     Username = user.UserName,
-        //     Token = tokenService.CreateToken(user)
-        // };
     }
 
     [HttpPost("login")]
@@ -61,7 +45,8 @@ public class AccountController(DataContext DbContext, ITokenService tokenService
         return new UserDto
         {
             Username = user.UserName,
-            Token = tokenService.CreateToken(user)
+            Token = tokenService.CreateToken(user),
+            PhotoUrl = user.Photos.FirstOrDefault(p => p.IsMain)?.Url
         };
     }
 
