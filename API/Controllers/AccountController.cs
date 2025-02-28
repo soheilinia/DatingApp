@@ -23,7 +23,9 @@ public class AccountController(DataContext DbContext, ITokenService tokenService
     [HttpPost("login")]
     public async Task<ActionResult<UserDto>> Login(LoginDto loginDto)
     {
-        var user = await DbContext.Users.SingleOrDefaultAsync(x => x.UserName == loginDto.Username.ToLower());
+        var user = await DbContext.Users
+            .Include(u => u.Photos)
+            .SingleOrDefaultAsync(x => x.UserName == loginDto.Username.ToLower());
 
         if (user == null)
         {
