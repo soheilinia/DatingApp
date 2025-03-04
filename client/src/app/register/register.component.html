@@ -1,28 +1,59 @@
-<form #registerForm="ngForm" (ngSubmit)="register()" autocomplete="off">
+<form [formGroup]="registerForm" (ngSubmit)="register()" autocomplete="off">
     <h2 class="text-center text-primary">Sing up</h2>
     <hr>
-    <div class="mb-3 form-floating">
-        <input type="text" class="form-control" id="name" name="username" placeholder="User Name"
-            [(ngModel)]="model.username" required>
-        <label for="username">Username</label>
-    </div>
-    <div class="mb-3 form-floating">
-        <input type="password" class="form-control" id="password" name="password" placeholder="Password"
-            [(ngModel)]="model.password" required>
-        <label for="password">Password</label>
+    <div class="mb-3">
+        <label style="margin-right: 10px;">I'm a: </label>
+        <label class="form-check-label">
+            <input type="radio" class="form-check-input" value="male" formControlName="gender">Male
+        </label>
+        <label class="form-check-label">
+            <input type="radio" class="form-check-input" value="female" formControlName="gender">Female
+        </label>
     </div>
 
-    <!-- <div class="mb-3">
-        <label>Who is your favorite user?</label>
-        <select class="form-select" name="favoriteUser" [(ngModel)]="model.favoriteUser" required>
-            @for (user of usersFromHomeComponent(); track $index) {
-                <option [value]="user.username">{{user.userName}}</option> 
-            }
-        </select>
-    </div> -->
+    <app-text-input 
+        [formControl]="$any(registerForm.controls['username'])"
+        [label]="'Username'">
+    </app-text-input>
+
+    <app-text-input 
+        [formControl]="$any(registerForm.controls['knownAs'])"
+        [label]="'known as'">
+    </app-text-input>
+
+    <app-date-picker 
+        [formControl]="$any(registerForm.controls['dateOfBirth'])"
+        [label]="'Date of birth'"
+        [maxDate]="maxDate"
+        >
+    </app-date-picker>
+
+    <app-text-input 
+        [formControl]="$any(registerForm.controls['city'])"
+        [label]="'City'">
+    </app-text-input>
+
+    <app-text-input 
+        [formControl]="$any(registerForm.controls['country'])"
+        [label]="'Country'">
+    </app-text-input>
+    
+    <app-text-input 
+        [formControl]="$any(registerForm.controls['password'])"
+        [label]="'Password'"
+        [type]="'password'">
+    </app-text-input>
+    
+    <app-text-input 
+        [formControl]="$any(registerForm.controls['confirmPassword'])"
+        [label]="'Confirm Password'"
+        [type]="'password'">
+    </app-text-input>
 
     <div class="form-group text-center">
         <button class="btn btn-success me-2" type="submit">Register</button>
         <button class="btn btn-default me-2" type="button" (click)="cancel()">Cancel</button>
     </div>
 </form>
+<p>Form Value: {{registerForm.value | json}}</p>
+<p>Form Status: {{registerForm.status | json}}</p>
