@@ -1,4 +1,4 @@
-import { Component, inject, OnDestroy } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AccountService } from '../_services/account.service';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
@@ -33,5 +33,4 @@ export class NavComponent {
     this.accountService.logout();
     this.router.navigateByUrl('/');
   }
-
 }
