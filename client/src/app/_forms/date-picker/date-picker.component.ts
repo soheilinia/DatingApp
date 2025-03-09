@@ -21,6 +21,7 @@ export class DatePickerComponent implements ControlValueAccessor {
       containerClass: 'theme-red',
       dateInputFormat: 'DD MMMM YYYY',
       isAnimated: true,
+      showTodayButton: true,
     }
   }
 

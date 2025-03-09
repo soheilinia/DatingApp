@@ -1,26 +1,25 @@
 import { Component, inject, OnInit, output } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, ReactiveFormsModule, ValidatorFn, Validators } from '@angular/forms';
 import { AccountService } from '../_services/account.service';
-import { ToastrService } from 'ngx-toastr';
-import { JsonPipe } from '@angular/common';
 import { TextInputComponent } from "../_forms/text-input/text-input.component";
 import { DatePickerComponent } from "../_forms/date-picker/date-picker.component";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
   standalone: true,
   templateUrl: './register.component.html',
   styleUrl: './register.component.css',
-  imports: [ReactiveFormsModule, JsonPipe, TextInputComponent, DatePickerComponent]
+  imports: [ReactiveFormsModule, TextInputComponent, DatePickerComponent]
 })
 export class RegisterComponent implements OnInit {
   private accountService = inject(AccountService);
   private fb = inject(FormBuilder);
-  private toastr = inject(ToastrService);
+  private router = inject(Router);
   cancelRegister = output<boolean>();
-  model: any = {};
   registerForm: FormGroup = new FormGroup({});
   maxDate = new Date();
+  validationErrors: string[] | undefined;
 
   ngOnInit(): void {
     this.initializeForm();
@@ -50,23 +49,20 @@ export class RegisterComponent implements OnInit {
   }
 
   register() {
-    console.log(this.registerForm.value);
-    // this.accountService.register(this.model).subscribe({
-    //   next: (response: any) => {
-    //     console.log(response);
-    //     this.cancel();
-    //   },
-    //   error: (error: any) => {
-    //     this.toastr.error(error.error);
-    //   }
-    // });
-  }
+    const dob = this.getDateOnly(this.registerForm.get('dateOfBirth')?.value);
+    this.registerForm.patchValue({ dateOfBirth: dob });
+    this.accountService.register(this.registerForm.value).subscribe({
+      next: () => this.router.navigateByUrl('/members'),
+      error: (error: any) => this.validationErrors = error
+    })
+  };
 
   cancel() {
     this.cancelRegister.emit(false);
   }
 
+  private getDateOnly(dateOfBirth: string | undefined) {
+    if (!dateOfBirth) return;
+    return new Date(dateOfBirth).toISOString().slice(0, 10);
+  }
 }
-
-
-
