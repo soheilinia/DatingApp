@@ -1,5 +1,3 @@
-using System;
-
 namespace API.Helpers;
 
 public class PagginationHeader(int CurrentPage, int itemsPerPage, int totalItems, int TotalPages)

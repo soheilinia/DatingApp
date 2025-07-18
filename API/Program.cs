@@ -26,7 +26,7 @@ try
     await context.Database.MigrateAsync();
     await Seed.SeedUsers(context);
 }
-catch (System.Exception ex)
+catch (Exception ex)
 {
     var logger = services.GetRequiredService<ILogger<Program>>();
     logger.LogError(ex, "An error occured during migration");
