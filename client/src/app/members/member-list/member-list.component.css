@@ -1,0 +1,15 @@
+.text-center.mt-3 {
+  margin-top: 1.5rem; /* keep margin top */
+
+  /* Use a clean, modern font */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.text-center.mt-3 h2 {
+  font-weight: 700;
+  font-size: 2.25rem;
+  color: #d9534f;          /* Bootstrap’s danger orange */
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* subtle shadow for depth */
+  letter-spacing: 0.03em;
+  margin-bottom: 1rem;
+}
