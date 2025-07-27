@@ -30,7 +30,7 @@ public class BuggyController(DataContext context) : BaseApiController
 
         var thing = context.Users.Find(-1);
 
-        var thingToReturn = thing.ToString();
+        var thingToReturn = thing?.ToString();
 
         return Ok(thingToReturn);
 
