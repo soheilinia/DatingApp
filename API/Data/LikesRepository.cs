@@ -28,13 +28,13 @@ public class LikesRepository(DataContext context, IMapper mapper) : ILikesReposi
         .ToListAsync();
     }
 
-    public async Task<UserLike?> GetUserLike(int sourceUserId, int targetUserId)
+    public async Task<UserLike?> GetUserLikes(int sourceUserId, int targetUserId)
     {
         return await context.Likes
         .FindAsync(sourceUserId, targetUserId);
     }
 
-    public async Task<IEnumerable<MemberDto>> GetUserLike(string predicate, int userId)
+    public async Task<IEnumerable<MemberDto>> GetUserLikes(string predicate, int userId)
     {
         var likes = context.Likes.AsQueryable();
 

@@ -1,4 +1,5 @@
 using System;
+using API.DTOs;
 using API.Entities;
 using API.Extensions;
 using API.Interfaces;
@@ -15,7 +16,7 @@ public class LikesController(ILikesRepository likesRepository) : BaseApiControll
 
         if (sourceUserId == targetUserId) return BadRequest("You cannot like yourself");
 
-        var existingLike = await likesRepository.GetUserLike(sourceUserId, targetUserId);
+        var existingLike = await likesRepository.GetUserLikes(sourceUserId, targetUserId);
 
         if (existingLike == null)
         {
@@ -36,4 +37,16 @@ public class LikesController(ILikesRepository likesRepository) : BaseApiControll
         return BadRequest("Failed to update like");
     }
 
+    [HttpGet("list")]
+    public async Task<ActionResult<IEnumerable<int>>> GetCurrentUserIds()
+    {
+        return Ok(await likesRepository.GetCurrentUserLikeIds(User.GetUserId()));
+    }
+
+    [HttpGet]
+    public async Task<ActionResult<IEnumerable<MemberDto>>> GetUserLikes(string predicate)
+    {
+        var users = await likesRepository.GetUserLikes(predicate, User.GetUserId());
+        return Ok(users);
+    }
 }
