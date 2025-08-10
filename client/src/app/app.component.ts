@@ -12,9 +12,9 @@ import { NgxSpinnerComponent } from "ngx-spinner";
   styleUrl: './app.component.css',
   encapsulation: ViewEncapsulation.Emulated
 })
-export class AppComponent implements OnInit {  
+export class AppComponent implements OnInit {
   private accountService = inject(AccountService);
-  
+
   ngOnInit(): void {
     this.setCurrentUser();
   }
@@ -23,7 +23,7 @@ export class AppComponent implements OnInit {
     const userString = localStorage.getItem('user');
     if (!userString) { return; }
     const user = JSON.parse(userString);
-    this.accountService.currentUser.set(user);
+    this.accountService.setCurrentUser(user);
   }
 
 }
