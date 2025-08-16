@@ -55,13 +55,14 @@ public class LikesRepository(DataContext context, IMapper mapper) : ILikesReposi
                 .ProjectTo<MemberDto>(mapper.ConfigurationProvider);
                 break;
             default:
-                var likedIds = await GetCurrentUserLikeIds(userId);
-                return await likes
-                .Where(x => x.TargetUserId == userId && likedIds.Contains(x.SourceUserId))
+                var likedIds = await GetCurrentUserLikeIds(likesParams.UserId);
+                query = likes
+                .Where(x => x.TargetUserId == likesParams.UserId && likedIds.Contains(x.SourceUserId))
                 .Select(x => x.SourceUser)
-                .ProjectTo<MemberDto>(mapper.ConfigurationProvider)
-                .ToListAsync();
+                .ProjectTo<MemberDto>(mapper.ConfigurationProvider);
+                break;
         }
+        return await PageList<MemberDto>.CreateAsync(query, likesParams.PageNumber, likesParams.PageSize);
     }
 
     public async Task<bool> SaveChanges()
