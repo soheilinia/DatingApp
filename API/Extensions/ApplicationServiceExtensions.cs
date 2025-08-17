@@ -4,8 +4,6 @@ using API.Interfaces;
 using API.Services;
 using Microsoft.EntityFrameworkCore;
 
-using AutoMapper;
-
 namespace API.Extensions;
 
 public static class ApplicationServiceExtensions

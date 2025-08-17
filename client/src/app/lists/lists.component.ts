@@ -12,8 +12,8 @@ import { PaginatedResult } from '../_models/pagination';
   templateUrl: './lists.component.html',
   styleUrl: './lists.component.css'
 })
-export class ListsComponent implements OnInit, OnDestroy {  
-  public likesService = inject(LikesService);  
+export class ListsComponent implements OnInit, OnDestroy {
+  public likesService = inject(LikesService);
   predicate = 'liked';
   pageNumber = 1;
   pageSize = 5;
